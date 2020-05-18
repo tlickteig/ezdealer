@@ -1,0 +1,72 @@
+﻿@model DataObjects.Employee
+
+<h2>@ViewBag.Title</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            Last Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            ID Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeID)
+        </dd>
+
+        <dt>
+            Role
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeRole)
+        </dd>
+
+        <dt>
+            Birth Date
+        </dt>
+
+        <dd>
+            @ViewBag.BirthDate
+        </dd>
+
+        <dt>
+            Start Date
+        </dt>
+
+        <dd>
+            @ViewBag.StartDate
+        </dd>
+
+        @if (Model.EndDate.Year != 1)
+        {
+            <dt>
+                End Date
+            </dt>
+
+            <dd>
+                @ViewBag.EndDate
+            </dd>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) | 
+    @Html.ActionLink("Back to List", "Index")
+</p>

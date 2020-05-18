@@ -1,0 +1,86 @@
+﻿@model IEnumerable<DataObjects.Repair>
+
+<h2>@ViewBag.Title</h2>
+
+<h4>Parts List</h4>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Part Type
+        </th>
+        <th>
+            Serial Number
+        </th>
+        <th>
+            Cost
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.Parts)
+    {
+        <tr>
+            <td>
+                @item.PartType
+            </td>
+            <td>
+                @item.SerialNumber
+            </td>
+            <td>
+                @item.Cost.ToString("c")
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.SerialNumber }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SerialNumber })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<h4>Repair List</h4>
+<p>
+    @Html.ActionLink("Create New", "CreateRepair")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Repair ID
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            VIN
+        </th>
+        <th>
+            Repair Total
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.RepairID
+            </td>
+            <td>
+                @item.Date.ToShortDateString()
+            </td>
+            <td>
+                @item.VIN
+            </td>
+            <td>
+                @item.getAmount().ToString("c")
+            </td>
+            <td>
+                @Html.ActionLink("Details", "RepairDetails", new { id = item.RepairID })
+            </td>
+        </tr>
+    }
+
+</table>

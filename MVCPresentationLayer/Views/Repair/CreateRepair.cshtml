@@ -1,0 +1,127 @@
+﻿@using DataObjects
+@model DataObjects.Repair
+
+<h2>@ViewBag.Title</h2>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Repair</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Customer</label>
+        <div class="col-md-10">
+            <select class="form-control" name="customerName" id="customerSelector">
+                @foreach (Customer customer in ViewBag.Customer)
+                {
+                    <option>@customer.getName()</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">New Customer</label>
+        <div>
+            <input type="checkbox" id="newCustomer" name="isChecked" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">First Name</label>
+        <div class="col-md-10">
+            <input type="text" name="firstName" class="form-control customerInfo" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Last Name</label>
+        <div class="col-md-10">
+            <input type="text" name="lastName" class="form-control customerInfo" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Address</label>
+        <div class="col-md-10">
+            <input type="text" name="address" class="form-control customerInfo" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Email Address</label>
+        <div class="col-md-10">
+            <input type="text" name="emailAddress" class="form-control customerInfo" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Phone Number</label>
+        <div class="col-md-10">
+            <input type="text" name="phoneNumber" class="form-control customerInfo" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VIN, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VIN, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.VIN, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+        </div>
+    </div>    
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RepairDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RepairDescription, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RepairDescription, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    $(document).ready(function () {
+        $("#newCustomer").click(function () {
+            updateInputs();
+        });
+
+        updateInputs();
+    });
+
+    function updateInputs() {
+        $(".customerInfo").each(function () {
+            $(this).prop("disabled", !$("#newCustomer").prop("checked"));
+        });
+
+        $("#customerSelector").prop("disabled",
+            $("#newCustomer").prop("checked"));
+    }
+</script>

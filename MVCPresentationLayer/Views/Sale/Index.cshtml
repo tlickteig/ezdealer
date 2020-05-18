@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DataObjects.SaleVM>
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Sale Amount
+        </th>
+        <th>
+            Sale Date
+        </th>        
+        <th>
+            Customer Name
+        </th>
+        <th>
+            Employee Name
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.SaleAmount.ToString("c")
+        </td>
+        <td>
+            @item.SaleDate.ToShortDateString()
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
+        </td>
+        <td>            
+            @Html.ActionLink("Details", "Details", new { id=item.SaleID })            
+        </td>
+    </tr>
+}
+
+</table>

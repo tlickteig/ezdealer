@@ -1,0 +1,94 @@
+﻿@model DataObjects.Car
+
+<h2>@ViewBag.Title</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MSRP)
+        </dt>
+
+        <dd>
+            $@Html.DisplayFor(model => model.MSRP)
+        </dd>
+        @if (Model.TradeInID == 0)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ShipmentID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ShipmentID)
+            </dd>
+        }
+        else
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.TradeInID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TradeInID)
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.CarType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Used)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Used)
+        </dd>
+    </dl>
+</div>
+<p>    
+    @Html.ActionLink("Back to List", "Index")
+</p>

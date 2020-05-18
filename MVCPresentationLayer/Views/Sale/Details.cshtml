@@ -1,0 +1,60 @@
+﻿@model DataObjects.SaleVM
+
+<h2>@ViewBag.Title</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Sale Amount
+        </dt>
+
+        <dd>
+            @Model.SaleAmount.ToString("c")
+        </dd>
+
+        <dt>
+            Sale Date
+        </dt>
+
+        <dd>
+            @Model.SaleDate.ToShortDateString()
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeID)
+        </dd>
+
+        <dt>
+            Employee Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dd>
+
+        <dt>
+            Customer Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+    </dl>
+</div>
+<p>    
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DataObjects.Employee>
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr style="font-weight: bold;">
+            <td>Employee Name</td>
+            <td>Birth Date</td>  
+            <td>Start Date</td>
+            <td>End Date</td>
+            <td>Employee ID</td>
+        </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.getEmployeeName()</td>
+        <td>@item.getEmployeeBirthDate().ToShortDateString()</td>
+        <td>@item.getStartDate().ToShortDateString()</td>
+        @if (item.getEndDate().Year != 1)
+        {
+            <td>@item.getEndDate().ToShortDateString()</td>
+        }
+        else
+        {
+            <td>N/A</td>
+        }
+        <td>@item.getEmployeeID()</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EmployeeID }) |
+            @if (item.getEndDate().Year == 1)
+            {
+                @Html.ActionLink("Deactivate", "Delete", new { id = item.EmployeeID })
+            }
+        </td>
+    </tr>
+}
+
+</table>

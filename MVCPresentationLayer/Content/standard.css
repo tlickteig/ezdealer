@@ -1,0 +1,20 @@
+﻿* {
+    font-family: 'Patua One', cursive;
+}
+
+#navi {
+    background-color: lightgrey;
+    border: 0;
+}
+
+.navbar .container {
+    background-color: lightgray;
+}
+
+.navbar .container .navbar-header .navbar-brand {
+    color: black;
+}
+
+.navbar .container ul li a{
+    color: black;
+}
