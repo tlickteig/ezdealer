@@ -1,0 +1,352 @@
+﻿<Window x:Class="EZDealer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EZDealer"
+        mc:Ignorable="d"
+        Title="EZ Dealer"
+        Height="450"
+        Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="380"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnEmployees"
+                VerticalAlignment="Center"
+                Margin="0 -300 0 0"
+                Height="50"
+                Width="120"
+                Click="BtnEmployees_Click">Employees
+        </Button>
+        <Button x:Name="btnCars"
+                VerticalAlignment="Center"
+                Margin="0 -150 0 0"
+                Height="50"
+                Width="120"
+                Click="BtnCars_Click">Cars
+        </Button>
+        <Button x:Name="btnSales"
+                VerticalAlignment="Center"
+                Margin="0 0 0 0"
+                Height="50"
+                Width="120"
+                Click="BtnSales_Click">Sales
+        </Button>
+        <Button x:Name="btnRepairs"
+                VerticalAlignment="Center"
+                Margin="0 150 0 0"
+                Height="50"
+                Width="120"
+                Click="BtnRepairs_Click">Repairs
+        </Button>
+        <Button x:Name="btnBilling"
+                VerticalAlignment="Center"
+                Margin="0 300 0 0"
+                Height="50"
+                Width="120"
+                Click="BtnBilling_Click">Billing
+        </Button>
+        <Label x:Name="lblUser"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               Background="White"
+               Width="150"
+               Height="70"
+               Grid.Row="1"
+               MouseEnter="LblUser_MouseEnter"
+               MouseLeave="LblUser_MouseLeave" MouseLeftButtonDown="LblUser_MouseLeftButtonDown">Name
+        </Label>
+        <Label x:Name="lblStatusMessage"
+               Grid.Row="1"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Left">Hello World!
+        </Label>
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                BorderThickness="1"
+                BorderBrush="Black" MouseLeftButtonUp="Border_MouseLeftButtonUp">
+        </Border>
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                BorderThickness="1"
+                BorderBrush="Black" />
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                BorderThickness="1"
+                BorderBrush="Black">
+        </Border>
+        <Border Grid.Row="0"
+                Grid.Column="1"
+                BorderThickness="1"
+                BorderBrush="Black">
+        </Border>
+        <GroupBox x:Name="grpEmployees"
+                  BorderThickness="0"
+                  Visibility="Hidden"
+                  Grid.Column="1">
+            <StackPanel>
+                <Label x:Name="lblEmployee"
+                       FontWeight="Bold">Employees</Label>
+                <ListView x:Name="lvwEmployees"
+                          Width="120"
+                          Height="300"
+                          HorizontalAlignment="Left"
+                          SelectionChanged="LvwEmployees_SelectionChanged"
+                          MouseDoubleClick="LvwEmployees_MouseDoubleClick">
+                </ListView>
+                <Button x:Name="btnNewEmployee"
+                        HorizontalAlignment="Left"
+                        Margin="10 15 10 1"
+                        Width="100" Click="BtnNewEmployee_Click">New Employee
+                </Button>
+                <Label x:Name="lblEmployeeName"
+                       FontWeight="Bold"
+                       Margin="150 -360 10 10"
+                       FontSize="24">Employee Name</Label>
+                <Label x:Name="lblEmployeeBirthDate"
+                       FontWeight="Bold"
+                       Margin="150 -320 10 10"
+                       FontSize="12">Birth Date</Label>
+                <Label x:Name="lblEmployeeStartDate"
+                       FontWeight="Bold"
+                       Margin="150 -300 10 10"
+                       FontSize="12">Start Date</Label>
+                <Label x:Name="lblEmployeeEndDate"
+                       FontWeight="Bold"
+                       Margin="150 -280 10 10"
+                       FontSize="12">End Date</Label>
+                <Label x:Name="lblEmployeeRole"
+                       FontWeight="Bold"
+                       Margin="150 -260 10 10"
+                       FontSize="12">Role</Label>
+                <Label x:Name="lblEmployeeID"
+                       FontWeight="Bold"
+                       Margin="150 -240 10 10"
+                       FontSize="12">Employee ID</Label>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="grpCars"
+                  Visibility="Hidden"
+                  Grid.Column="1"
+                  BorderThickness="0">
+            <StackPanel>
+                <Label x:Name="lblNewCar"
+                       FontWeight="Bold">New Cars</Label>
+                <ListView x:Name="lvwNewCars"
+                          Width="120"
+                          Height="300"
+                          HorizontalAlignment="Left"
+                          SelectionChanged="LvwNewCars_SelectionChanged"
+                          MouseDoubleClick="LvwNewCars_MouseDoubleClick">
+                </ListView>
+                <Label x:Name="lblUsedCar"
+                       FontWeight="Bold"
+                       Margin="150 -327 0 0">Used Cars</Label>
+                <ListView x:Name="lvwUsedCars"
+                          Margin="150 -300 0 0"
+                          Width="120"
+                          Height="300"
+                          HorizontalAlignment="Left"
+                          SelectionChanged="LvwUsedCars_SelectionChanged"
+                          MouseDoubleClick="LvwUsedCars_MouseDoubleClick">
+                </ListView>
+                <Label x:Name="lblTradeIn"
+                       FontWeight="Bold"
+                       Margin="300 -327 0 0">Trade-Ins</Label>
+                <ListView x:Name="lvwTradeIns"
+                          Margin="300 -300 0 0"
+                          Width="120"
+                          Height="300"
+                          HorizontalAlignment="Left"
+                          SelectionChanged="LvwTradeIns_SelectionChanged"
+                          MouseDoubleClick="LvwTradeIns_MouseDoubleClick">
+                </ListView>
+                <Button x:Name="btnNewCar"
+                        HorizontalAlignment="Left"
+                        Margin="10 15 10 1"
+                        Width="100" Click="BtnNewCar_Click">Add New Car
+                </Button>
+                <Button x:Name="btnUsedCar"
+                        Height="20"
+                        Margin="-400 -21 10 1"
+                        Width="100"
+                        Click="BtnUsedCar_Click">Add Used Car
+                </Button>
+                <Button x:Name="btnTradeIn"
+                        Height="20"
+                        Margin="-95 -21 10 1"
+                        Width="100"
+                        Click="BtnTradeIn_Click">Add Trade-In
+                </Button>
+                <Label x:Name="lblCarName"
+                       FontWeight="Bold"
+                       Margin="430 -360 10 10"
+                       FontSize="24">Car Name
+                </Label>
+                <Label x:Name="lblCarType"
+                       FontWeight="Bold"
+                       Margin="430 -320 10 10"
+                       FontSize="12">Car Type
+                </Label>
+                <Label x:Name="lblColor"
+                       FontWeight="Bold"
+                       Margin="430 -300 10 10"
+                       FontSize="12">Car Color
+                </Label>
+                <Label x:Name="lblVIN"
+                       FontWeight="Bold"
+                       Margin="430 -280 10 10"
+                       FontSize="12">Car VIN
+                </Label>
+                <Label x:Name="lblMSRP"
+                       FontWeight="Bold"
+                       Margin="430 -260 10 10"
+                       FontSize="12">Car MSRP
+                </Label>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="grpSales"
+                  Visibility="Hidden"
+                  BorderThickness="0"
+                  Grid.Column="1">
+            <StackPanel>
+                <Label x:Name="lblSalesLog"
+                       FontWeight="DemiBold">
+                    Sales Log
+                </Label>
+                <ListView x:Name="lvwSalesLog"
+                          Width="120"
+                          Height="300"
+                          HorizontalAlignment="Left"
+                          SelectionChanged="LvwSalesLog_SelectionChanged"
+                          MouseDoubleClick="LvwSalesLog_MouseDoubleClick">
+
+                </ListView>
+                <Button x:Name="btnNewSale"
+                        HorizontalAlignment="Left"
+                        Margin="10 15 10 1"
+                        Width="100"
+                        Click="BtnNewSale_Click">New Sale
+                </Button>
+                <Label x:Name="lblCarNameSale"
+                       FontWeight="Bold"
+                       Margin="130 -360 10 10"
+                       FontSize="24">Car Name
+                </Label>
+                <Label x:Name="lblCustomerNameSale"
+                       FontWeight="Bold"
+                       Margin="130 -320 10 10"
+                       FontSize="12">Customer Name
+                </Label>
+                <Label x:Name="lblEmployeeNameSale"
+                       FontWeight="Bold"
+                       Margin="130 -300 10 10"
+                       FontSize="12">Employee Name
+                </Label>
+                <Label x:Name="lblSaleAmount"
+                       FontWeight="Bold"
+                       Margin="130 -280 10 10"
+                       FontSize="12">Sale Amount
+                </Label>
+                <Label x:Name="lblSaleDate"
+                       FontWeight="Bold"
+                       Margin="130 -260 10 10"
+                       FontSize="12">Sale Date
+                </Label>
+
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="grpRepairs"
+                  Visibility="Visible"
+                  Grid.Column="1">
+            <StackPanel>
+                <Label x:Name="lblRepairLog"
+                       FontWeight="DemiBold">
+                    Repair Log
+                </Label>
+                <ListView x:Name="lvwRepairLog"
+                          Width="120"
+                          Height="300"
+                          HorizontalAlignment="Left"
+                          SelectionChanged="LvwRepairLog_SelectionChanged"
+                          MouseDoubleClick="LvwRepairLog_MouseDoubleClick">
+                </ListView>
+                <Button x:Name="btnNewRepair"
+                        HorizontalAlignment="Left"
+                        Margin="10 15 10 1"
+                        Width="100"
+                        Click="BtnNewRepair_Click">New Repair
+                </Button>
+                <Label x:Name="lblPartsList"
+                       FontWeight="DemiBold"
+                       Margin="150 -362 0 0">Parts List</Label>
+                <ListView x:Name="lvwPartsList"
+                          Margin="150 -375 0 0"
+                          Width="120"
+                          Height="300"
+                          HorizontalAlignment="Left"
+                          SelectionChanged="LvwPartsList_SelectionChanged"
+                          MouseDoubleClick="LvwPartsList_MouseDoubleClick">
+                </ListView>
+                <Button x:Name="btnNewPart"
+                        HorizontalAlignment="Left"
+                        Margin="160 -22 0 1"
+                        Width="100"
+                        Click="BtnNewPart_Click">Add New Part
+                </Button>
+                <Label x:Name="lblRepairPartName"
+                       FontWeight="Bold"
+                       Margin="280 -360 10 10"
+                       FontSize="24">Repair / Part Type
+                </Label>
+                <Label x:Name="lblSerialNumberVIN"
+                       FontWeight="Bold"
+                       Margin="280 -320 10 10"
+                       FontSize="12">Serial Number / VIN
+                </Label>
+                <Label x:Name="lblCostRepairDescription"
+                       FontWeight="Bold"
+                       Margin="280 -300 10 10"
+                       FontSize="12">Part Cost / Repair Date
+                </Label>
+                <Label x:Name="lblPartQuantityEmployeeName"
+                       FontWeight="Bold"
+                       Margin="280 -280 10 10"
+                       FontSize="12">Part Quantity / Employee Name
+                </Label>
+                <Label x:Name="lblRepairCustomerName"
+                       FontWeight="Bold"
+                       Margin="280 -260 10 10"
+                       FontSize="12">Customer Name
+                </Label>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="grpBilling"
+                  Visibility="Hidden"
+                  BorderThickness="0"
+                  Grid.Column="1">
+            <StackPanel>
+                <Label x:Name="lblBillingLog"
+                       FontWeight="DemiBold">
+                    Billing Log
+                </Label>
+                <ListView x:Name="lvwBillingLog"
+                          Width="120"
+                          Height="300"
+                          HorizontalAlignment="Left" MouseDoubleClick="LvwBillingLog_MouseDoubleClick">
+                </ListView>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
+    
+

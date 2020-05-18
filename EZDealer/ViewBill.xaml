@@ -1,0 +1,50 @@
+﻿<Window x:Class="EZDealer.ViewBill"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EZDealer"
+        mc:Ignorable="d"
+        Title="Bill" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgLineItems" Grid.Column="1" Margin="10 15 10 15"></DataGrid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblCustomerName" Grid.Row="0"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Center"
+               FontWeight="Bold"
+               FontSize="24">Customer Name</Label>
+            <Label x:Name="lblAmountDue" Grid.Row="1"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Center"
+               FontWeight="Bold"
+               FontSize="24">Amount Due</Label>
+            <Label x:Name="lblAmountPaid" Grid.Row="2"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Center"
+               FontWeight="Bold"
+               FontSize="24">Amount Paid</Label>
+            <Label x:Name="lblIssueDate" Grid.Row="3"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Center"
+               FontWeight="Bold"
+               FontSize="24">Issue Date</Label>
+            <Label x:Name="lblDueDate" Grid.Row="4"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Center"
+               FontWeight="Bold"
+               FontSize="24">Due Date</Label>
+        </Grid>
+    </Grid>
+</Window>

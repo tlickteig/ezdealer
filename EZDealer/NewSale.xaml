@@ -1,0 +1,145 @@
+﻿<Window x:Class="EZDealer.NewSale"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EZDealer"
+        mc:Ignorable="d"
+        Title="New Sale"
+        Height="550"
+        Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblCarName"
+               Grid.Row="0"
+               Grid.Column="0"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center">Car:</Label>
+        <Label x:Name="lblSelectCustomer"
+               Grid.Row="1"
+               Grid.Column="0"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center">Customer:</Label>
+        <Label x:Name="lblNewCustomer"
+               Grid.Row="2"
+               Grid.Column="0"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center">New Customer:</Label>
+        <Label x:Name="lblAmount"
+               Grid.Row="3"
+               Grid.Column="0"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center">Sale Amount:</Label>
+        <Label x:Name="lblFirstName"
+               Grid.Row="4"
+               Grid.Column="0"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center">First Name:</Label>
+        <Label x:Name="lblLastName"
+               Grid.Row="5"
+               Grid.Column="0"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center">Last Name:</Label>
+        <Label x:Name="lblAddress"
+               Grid.Row="6"
+               Grid.Column="0"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center">Address:</Label>
+        <Label x:Name="lblEmailAddress"
+               Grid.Row="7"
+               Grid.Column="0"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center">Email Address:</Label>
+        <Label x:Name="lblPhoneNumber"
+               Grid.Row="8"
+               Grid.Column="0"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center">Phone Number:</Label>
+        <ComboBox x:Name="cboCar"
+                  Grid.Row="0"
+                  Grid.Column="1"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  Margin="10 15 10 15"></ComboBox>
+        <ComboBox x:Name="cboCustomer"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  Margin="10 15 10 15"></ComboBox>
+        <CheckBox x:Name="chkExisting"
+                  Grid.Row="2"
+                  Grid.Column="1"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  Margin="10 15 10 15"
+                  Click="ChkExisting_Click"></CheckBox>
+        <TextBox x:Name="txtAmount"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="10 15 10 15"></TextBox>
+        <TextBox x:Name="txtFirstName"
+                 Grid.Row="4"
+                 Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="10 15 10 15"></TextBox>
+        <TextBox x:Name="txtLastName"
+                 Grid.Row="5"
+                 Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="10 15 10 15"></TextBox>
+        <TextBox x:Name="txtAddress"
+                 Grid.Row="6"
+                 Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="10 15 10 15"></TextBox>
+        <TextBox x:Name="txtEmail"
+                 Grid.Row="7"
+                 Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="10 15 10 15"></TextBox>
+        <TextBox x:Name="txtPhoneNumber"
+                 Grid.Row="8"
+                 Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="10 15 10 15"></TextBox>
+        <Button x:Name="btnSave"
+                Grid.Row="9"
+                Grid.Column="1"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"
+                Click="BtnSave_Click">Add Sale</Button>
+    </Grid>
+</Window>

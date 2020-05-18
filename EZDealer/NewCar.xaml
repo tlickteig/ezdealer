@@ -1,0 +1,105 @@
+﻿<Window x:Class="EZDealer.NewCar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EZDealer"
+        mc:Ignorable="d"
+        Title="Add New Car" Height="500" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" x:Name="lblVIN"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center"
+               >VIN: </Label>
+        <Label Grid.Row="1" x:Name="lblMake"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center"
+               >Make: </Label>
+        <Label Grid.Row="2" x:Name="lblModel"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center"
+               >Model: </Label>
+        <Label Grid.Row="3" x:Name="lblYear"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center"
+               >Year: </Label>
+        <Label Grid.Row="4" x:Name="lblColor"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center"
+               >Color: </Label>
+        <Label Grid.Row="5" x:Name="lblMSRP"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center"
+               >MSRP: </Label>
+        <Label Grid.Row="6" x:Name="lblCarType"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center"
+               >Car Type: </Label>
+        <Label Grid.Row="7" x:Name="lblTradeInDestination"
+               FontWeight="DemiBold"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Center"
+               >Destination:</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtVIN"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"></TextBox>
+        <ComboBox Grid.Row="1" Grid.Column="1" x:Name="cboMakes"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"></ComboBox>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtModel"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"></TextBox>
+        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="cboYears"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"></ComboBox>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtColor"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"></TextBox>
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtMSRP"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"></TextBox>
+        <ComboBox Grid.Row="6" Grid.Column="1" x:Name="cboCarType"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"></ComboBox>
+        <ComboBox Grid.Row="7" Grid.Column="1" x:Name="cboTradeInDestination"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"></ComboBox>
+        <TextBox Grid.Row="7" Grid.Column="1" x:Name="txtShipmentAmount"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Margin="10 15 10 15"></TextBox>
+        <Button x:Name="btnSubmit" Grid.Column="1" Grid.Row="8" 
+                Margin="30 15 30 15" 
+                Click="BtnSubmit_Click">Save Changes</Button>
+    </Grid>
+</Window>

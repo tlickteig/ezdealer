@@ -1,0 +1,47 @@
+﻿ <Window x:Class="EZDealer.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EZDealer"
+        mc:Ignorable="d"
+        Title="Login" Height="300" Width="225">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblLogin"
+            Grid.Row="0" 
+            Content="Login"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="30"
+            FontWeight="DemiBold">
+        </Label>
+        <TextBox x:Name="txtUsername"
+            Grid.Row="1"
+            Height="20"
+            Width="150"
+            Text="Employee ID">
+        </TextBox>
+        <PasswordBox x:Name="pwdPassword"
+            Grid.Row="2"
+            Height="20"
+            Width="150"
+            Password="11111">
+        </PasswordBox>
+        <Button x:Name="btnLogin"
+            Grid.Row="3"
+            Height="30"
+            Width="150"
+            FontWeight="DemiBold"
+            Click="BtnLogin_Click">Login
+        </Button>
+    </Grid>
+</Window>
