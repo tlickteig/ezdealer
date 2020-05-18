@@ -1,0 +1,2 @@
+Software the manage every aspect of a car dealership 
+	including sales, inventory, service, and buying.
